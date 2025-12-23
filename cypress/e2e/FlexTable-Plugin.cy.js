@@ -10,7 +10,7 @@ import ShowEntryInfoAndPagination from "../../POM/FlexTable-Plugin/entryInfoAndP
 import Styling from "../../POM/FlexTable-Plugin/ensureStyling.js";
 import DeleteTable from "../../POM/FlexTable-Plugin/deleteTable.js";
 
-describe("Part A — FlexTable: Automation Test Cases", () => {
+describe("FlexTable: Automation Test Cases", () => {
 
     beforeEach("", () => {
 
