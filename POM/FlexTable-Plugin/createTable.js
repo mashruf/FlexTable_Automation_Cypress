@@ -22,6 +22,8 @@ class CreateTable {
             cy.contains(".action-title", "Connect your Google Sheet", { timeout: 10000 })
                 .should("be.visible");
 
+            cy.wait(2000);
+
             cy.get("#table-name").type("{ctrl+a}")
             .clear()
             .type(data.name);

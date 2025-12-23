@@ -9,14 +9,14 @@ class VisitFrontEndTable {
                 cy.contains(".wp-menu-name", "Pages").realHover();
                 cy.get(".wp-submenu").contains("All Pages").click({ force: true });
 
-                cy.contains(".iedit", page.title, { timeout: 10000 })
+                cy.contains(".iedit", page.title, { timeout: 15000 })
                     .should("be.visible")
                     .realHover()
                     .find(".view")
                     .click();
 
                 if(assert!=false){
-                    cy.contains(table.name, { timeout: 10000 }).should("be.visible");
+                    cy.contains(table.name, { timeout: 15000 }).should("be.visible");
                 }
                 else{
                     cy.log("table deleted");

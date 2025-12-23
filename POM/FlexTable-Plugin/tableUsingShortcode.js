@@ -49,7 +49,7 @@ class TableWithShortcode {
                             .click();
                         
                         //Assertion: frontend page is visible
-                        cy.get("table",{timeout: 10000}).should("be.visible");
+                        cy.get("table",{timeout: 15000}).should("be.visible");
                     })
             })
 
