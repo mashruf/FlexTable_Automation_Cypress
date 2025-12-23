@@ -34,7 +34,8 @@ FlexTable_Automation_Cypress/
 - Google Chrome
 
 ## Test Cases
-![WPPOOL Test cases - Sheet1 (2)_page-0001](https://github.com/user-attachments/assets/af07118b-3969-4253-b620-cce89c984707)
+<img width="583" height="1554" alt="flex" src="https://github.com/user-attachments/assets/35eb6165-cd76-44af-b46b-8af624fc0401" />
+
 
 ## Credentials and data
 - Rename **example.cypress.env.json** to **cypress.env.json**. Enter your credentials on the file.
