@@ -14,23 +14,37 @@ class PluginActivation {
     //Search for the FlexTable plugin
     searchFlexTable() {
         cy.fixture("plugin-data").then((data) => {
-            // Type the plugin name in the search input
-            cy.get("#plugin-search-input").clear().type(data.name);
 
-            // Try to find the plugin in the search results
-            cy.get("body").then($body => {
-                if ($body.find('.plugin-title:contains("' + data.name + '")').length > 0) {
-                    // Plugin exists: activate it
-                    cy.contains('.plugin-title', data.name).then(() => {
-                        this.activate();
-                        this.isActivated();
+            cy.get("body").then(body => {
+                if (body.find("#plugin-search-input").length > 0) {
+                    // Type the plugin name in the search input
+                    cy.get("#plugin-search-input").clear().type(data.name);
+
+                    // Try to find the plugin in the search results
+                    cy.get("body").then(body => {
+                        if (body.find('.plugin-title:contains("' + data.name + '")').length > 0) {
+                            // Plugin exists: activate it
+                            cy.contains('.plugin-title', data.name).then(() => {
+                                this.activate();
+                                this.isActivated();
+                            });
+                        } else {
+                            // Plugin not found: install and activate
+                            this.installAndActivate();
+                            this.isActivated();
+                        }
                     });
-                } else {
-                    // Plugin not found: install and activate
+                }
+                else {
+                    // no plugin exist: install flextable
                     this.installAndActivate();
                     this.isActivated();
                 }
-            });
+            })
+
+
+
+
         });
     }
 
@@ -45,7 +59,7 @@ class PluginActivation {
 
             cy.wait(5000);
 
-            cy.contains(".plugin-card", data.name).parent().find("a").contains("Install Now",{timeout:60000}).click();
+            cy.contains(".plugin-card", data.name).parent().find("a").contains("Install Now", { timeout: 60000 }).click();
 
             cy.contains(".plugin-card", data.name).parent().find("a")
                 .contains("Activate", { timeout: 60000 }).click();
