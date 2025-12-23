@@ -45,8 +45,9 @@ class TableWithShortcode {
                         //navigate to frontend page
                         cy.get(".editor-post-publish-panel")
                             .contains("View Page")
+                            .invoke("removeAttr", "target")
                             .click();
-
+                        
                         //Assertion: frontend page is visible
                         cy.get("table",{timeout: 10000}).should("be.visible");
                     })
