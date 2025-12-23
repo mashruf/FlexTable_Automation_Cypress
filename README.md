@@ -75,6 +75,8 @@ npx cypress run
 ```
 
 ## Report
+<img width="1920" height="1000" alt="screencapture-127-0-0-1-5500-cypress-reports-html-index-html-2025-12-24-00_13_03" src="https://github.com/user-attachments/assets/d5b13e3c-d636-4cb9-819f-32b1c126589c" />
+
 
 
 
